@@ -119,7 +119,7 @@ const UserModal = ({ user, readOnly, show, setShow, onSave }: Props) => {
               <Form.Control
                 type="date"
                 {...(readOnly ? { readOnly: true } : {})}
-                value={formData.dob?.toString()}
+                value={new Date(formData.dob).toISOString().split('T')[0]}
                 onChange={handleChange}
                 name="dob"
               />
