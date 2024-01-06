@@ -166,17 +166,19 @@ export default function UsersTable() {
   return (
     <>
       <Button variant="primary" onClick={handleShowDialog}>
-        Launch static backdrop modal
+        Új felhasználó
       </Button>
-      <UserListTable
-        users={users}
-        active={active}
-        setActive={setActive}
-        onUserView={handleUserView}
-        onUserUpdate={handleUserUpdate}
-        onUserDelete={handleUserDelete}
-      />
-      <Spinner shown={loading} />
+      <div id="table-container">
+        <Spinner shown={loading} />
+        <UserListTable
+          users={users}
+          active={active}
+          setActive={setActive}
+          onUserView={handleUserView}
+          onUserUpdate={handleUserUpdate}
+          onUserDelete={handleUserDelete}
+        />
+      </div>
       <UserModal
         // user={active > 0 ? user : ( as UserInterface)}
         user={active > 0 ? user : new UserData()}
@@ -348,5 +350,5 @@ interface TDMappedTextProps {
   value: string;
 }
 function MappedTextTD({ map, value }: TDMappedTextProps) {
-  return <td>{map[value] ?? '??'}</td>;
+  return <td>{map[value] ?? "??"}</td>;
 }

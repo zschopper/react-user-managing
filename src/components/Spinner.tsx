@@ -3,7 +3,7 @@ interface Props {
 }
 const Spinner = ({shown} : Props) => {
   console.log("spinner: " + shown)
-  return shown ? <div className={"spinner"}>Working..</div> : <div></div>;
+  return shown &&   <div id="overlay" className="visible"><div className="spinner"></div></div>;
 };
 
 export default Spinner;
