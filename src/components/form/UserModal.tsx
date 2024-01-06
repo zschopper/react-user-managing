@@ -93,7 +93,6 @@ const UserModal = ({ user, readOnly, show, setShow, onSave }: Props) => {
                 value="unknown"
                 checked={formData.gender === "unknown"}
                 onChange={handleChange}
-                defaultChecked={true}
               />
               <Form.Check
                 type="radio"
